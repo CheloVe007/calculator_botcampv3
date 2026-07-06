@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <script>
+      const mapa1 = new Map([
+        ["casa", "house"],
+        ["rojo", "red"],
+        ["auto", "car"],
+      ]);
+      const palcastellano = prompt("Ingrese una palabra en castellano:");
+      document.write(
+        `La traducción de ${palcastellano} es ${mapa1.get(palcastellano)}`,
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+/* Centrar la calculadora en la pantalla de la computadora */
+body {
+  background-color: #000000;
+  font-family: "Times New Roman", Times, serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.calculadora {
+  background-color: #333333;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+}
+
+#pantalla {
+  width: 100%;
+  height: 60px;
+  font-size: 32px;
+  font-family: "Times New Roman", Times, serif;
+  text-align: right;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 4px;
+}
+
+.contenedor-botones {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 24px;
+  padding: 15px;
+  cursor: pointer;
+  background-color: #ffffff;
+  border: 1px solid #999999;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #dddddd;
+}
+
+.Large_buttom {
+  grid-row: span 2;
+  background-color: #ff9f0a;
+  color: white;
+  height: 100%;
+}
+
+.Cero_buttom {
+  grid-column: span 2;
+}
