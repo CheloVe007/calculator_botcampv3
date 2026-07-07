@@ -55,7 +55,6 @@ button:active {
   transform: scale(0.92);
 }
 
-/* number buttons: white */
 .btn-num {
   background-color: #ffffff;
   color: #1c1c1c;
@@ -65,7 +64,6 @@ button:active {
   filter: brightness(0.92);
 }
 
-/* function buttons: C and Delete, light gray */
 .btn-func {
   background-color: #d4d4d2;
   color: #1c1c1c;
@@ -76,7 +74,6 @@ button:active {
   filter: brightness(0.92);
 }
 
-/* operator buttons: orange */
 .btn-op {
   background-color: #ff9f0a;
   color: #ffffff;
@@ -86,7 +83,6 @@ button:active {
   filter: brightness(1.08);
 }
 
-/* zero button: wide pill shape, spans 3 columns */
 .btn-zero {
   grid-column: span 3;
   border-radius: 33px;
@@ -94,7 +90,6 @@ button:active {
   padding-left: 28px;
 }
 
-/* equal button: orange, same size as others */
 .btn-equal {
   background-color: #ff9f0a;
   color: #ffffff;
@@ -105,19 +100,16 @@ button:active {
   filter: brightness(1.08);
 }
 
-/* wrapper holds calculator + switch side by side */
 .wrapper {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-/* buttons container needs relative position for the overlay to work */
 .buttons {
   position: relative;
 }
 
-/* transparent block that covers the buttons, hidden by default */
 .overlay {
   display: none;
   position: absolute;
@@ -130,7 +122,6 @@ button:active {
   cursor: not-allowed;
 }
 
-/* switch box next to the calculator */
 .switch-box {
   display: flex;
   flex-direction: column;
@@ -141,7 +132,6 @@ button:active {
   font-size: 18px;
 }
 
-/* the toggle switch itself */
 .switch {
   position: relative;
   display: inline-block;
