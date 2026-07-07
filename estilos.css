@@ -1,4 +1,3 @@
-/* Centrar la calculadora en la pantalla de la computadora */
 body {
   background-color: #000000;
   font-family: "Times New Roman", Times, serif;
@@ -9,54 +8,181 @@ body {
   margin: 0;
 }
 
-.calculadora {
+.calculator {
   background-color: #333333;
   padding: 20px;
-  border-radius: 10px;
-  width: 300px;
+  border-radius: 20px;
+  width: 320px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-#pantalla {
+#screen {
   width: 100%;
-  height: 60px;
-  font-size: 32px;
+  height: 70px;
+  font-size: 34px;
   font-family: "Times New Roman", Times, serif;
   text-align: right;
   margin-bottom: 15px;
   box-sizing: border-box;
-  padding: 10px;
-  background-color: #ffffff;
+  padding: 10px 15px;
+  background-color: #1c1c1c;
+  color: #ffffff;
   border: none;
-  border-radius: 4px;
+  border-radius: 12px;
+  letter-spacing: 1px;
 }
 
-.contenedor-botones {
+.buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  gap: 12px;
 }
 
 button {
   font-family: "Times New Roman", Times, serif;
   font-size: 24px;
-  padding: 15px;
+  width: 100%;
+  height: 65px;
   cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  transition:
+    transform 0.08s ease,
+    filter 0.15s ease;
+}
+
+button:active {
+  transform: scale(0.92);
+}
+
+/* number buttons: white */
+.btn-num {
   background-color: #ffffff;
-  border: 1px solid #999999;
-  border-radius: 5px;
+  color: #1c1c1c;
 }
 
-button:hover {
-  background-color: #dddddd;
+.btn-num:hover {
+  filter: brightness(0.92);
 }
 
-.Large_buttom {
-  grid-row: span 2;
+/* function buttons: C and Delete, light gray */
+.btn-func {
+  background-color: #d4d4d2;
+  color: #1c1c1c;
+  font-size: 18px;
+}
+
+.btn-func:hover {
+  filter: brightness(0.92);
+}
+
+/* operator buttons: orange */
+.btn-op {
   background-color: #ff9f0a;
-  color: white;
-  height: 100%;
+  color: #ffffff;
 }
 
-.Cero_buttom {
-  grid-column: span 2;
+.btn-op:hover {
+  filter: brightness(1.08);
+}
+
+/* zero button: wide pill shape, spans 3 columns */
+.btn-zero {
+  grid-column: span 3;
+  border-radius: 33px;
+  text-align: left;
+  padding-left: 28px;
+}
+
+/* equal button: orange, same size as others */
+.btn-equal {
+  background-color: #ff9f0a;
+  color: #ffffff;
+  font-size: 28px;
+}
+
+.btn-equal:hover {
+  filter: brightness(1.08);
+}
+
+/* wrapper holds calculator + switch side by side */
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* buttons container needs relative position for the overlay to work */
+.buttons {
+  position: relative;
+}
+
+/* transparent block that covers the buttons, hidden by default */
+.overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  cursor: not-allowed;
+}
+
+/* switch box next to the calculator */
+.switch-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+}
+
+/* the toggle switch itself */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #666666;
+  border-radius: 26px;
+  transition: 0.2s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+.switch input:checked + .slider {
+  background-color: #ff9f0a;
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(24px);
 }
