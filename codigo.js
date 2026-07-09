@@ -1,6 +1,8 @@
 const screen = document.getElementById("screen");
 let expression = "";
 
+let history = JSON.parse(localStorage.getItem("history")) || [];
+
 function sum(a, b) {
   return a + b;
 }
@@ -81,9 +83,32 @@ function calculate() {
     }
   }
 
+  const historyEntry = expression + " = " + result;
+  history.push(historyEntry);
+  localStorage.setItem("history", JSON.stringify(history));
+  renderHistory();
+
   screen.value = result;
   expression = String(result);
 }
+
+function renderHistory() {
+  const historyList = document.getElementById("historyList");
+  historyList.innerHTML = "";
+  for (let i = 0; i < history.length; i++) {
+    const li = document.createElement("li");
+    li.textContent = history[i];
+    historyList.appendChild(li);
+  }
+}
+
+function clearHistory() {
+  history = [];
+  localStorage.removeItem("history");
+  renderHistory();
+}
+
+renderHistory();
 
 let keyboardMode = false;
 

@@ -176,3 +176,48 @@ button:active {
 .switch input:checked + .slider::before {
   transform: translateX(24px);
 }
+
+.history-box {
+  background-color: #333333;
+  padding: 15px;
+  border-radius: 20px;
+  width: 200px;
+  height: 400px;
+  color: #ffffff;
+  font-family: "Times New Roman", Times, serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.history-box h3 {
+  margin: 0 0 10px 0;
+  text-align: center;
+}
+
+.btn-clear-history {
+  font-family: "Times New Roman", Times, serif;
+  background-color: #ff9f0a;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 6px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+#historyList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+#historyList li {
+  background-color: #1c1c1c;
+  padding: 8px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  font-size: 16px;
+  word-wrap: break-word;
+}
