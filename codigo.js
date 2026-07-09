@@ -39,15 +39,15 @@ function deleteLast() {
 }
 
 function isValid(exp) {
-  if (exp === "") return false;
-
-  if (/^[+\-*/]/.test(exp)) return false;
-
-  if (/[+\-*/.]$/.test(exp)) return false;
-
-  if (/[+\-*/]{2,}/.test(exp)) return false;
-
-  if (!/^[0-9.+\-*/]+$/.test(exp)) return false;
+  if (
+    exp === "" ||
+    /^[+\-*/]/.test(exp) ||
+    /[+\-*/.]$/.test(exp) ||
+    /[+\-*/]{2,}/.test(exp) ||
+    !/^[0-9.+\-*/]+$/.test(exp)
+  ) {
+    return false;
+  }
 
   return true;
 }
